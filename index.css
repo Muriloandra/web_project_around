@@ -1,12 +1,14 @@
 @import url(./fonts.css);
 
 * {
-  max-width: 1280px;
-  width: 100%;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   box-sizing: border-box;
   background-color: #000000;
   margin: 0;
+}
+.page {
+  max-width: 1280px;
+  width: 100%;
 }
 
 .header {
@@ -21,4 +23,73 @@
 .header__img {
   max-width: 173px;
   width: 100%;
+}
+.explorer {
+  margin-top: 40px;
+  margin-left: 200px;
+  margin-right: 200px;
+  width: 100%;
+  max-width: 880px;
+  display: flex;
+}
+
+.explorer__img {
+  max-width: 120px;
+  width: 100%;
+  border-radius: 60px;
+  height: 120px;
+}
+
+.explorer__div {
+  max-width: 420px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  margin-left: 30px;
+  margin-right: 165px;
+}
+
+.explorer_title {
+  font-family: "Inter";
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ffffff;
+  max-width: 373px;
+}
+.explorer__paragraph {
+  font-family: "Inter";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ffffff;
+  max-width: 415px;
+  width: 100%;
+  padding-bottom: 20px;
+}
+.explorer__btn_form {
+  border: 1px solid #ffffff;
+  max-width: 24px;
+  height: 24px;
+  margin-left: 15px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+.explorer__img_pen {
+  max-width: 10px;
+  height: 10px;
+}
+.explorer__btn_insert {
+  max-width: 150px;
+  width: 100%;
+  border: 2px solid #ffffff;
+  height: 50px;
+  margin-top: 20px;
+  cursor: pointer;
 }
