@@ -1,0 +1,214 @@
+.explorer {
+  max-width: 880px;
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+  padding: auto;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.explorer__container {
+  display: flex;
+}
+.explorer__img {
+  max-width: 120px;
+  border-radius: 60px;
+  height: 120px;
+}
+
+.explorer__div {
+  max-width: 420px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  margin-left: 30px;
+}
+
+.explorer_title {
+  font-family: "Inter";
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ffffff;
+  max-width: 373px;
+}
+.explorer__paragraph {
+  font-family: "Inter";
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ffffff;
+  max-width: 415px;
+  width: 100%;
+  padding-bottom: 20px;
+}
+.explorer__btn_form {
+  background-image: url(../images/Edit\ Button.svg);
+  width: 24px;
+  height: 24px;
+  margin-left: 18px;
+  margin-top: 8px;
+  background-color: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+}
+.explorer__btn_form:hover {
+  opacity: 0.6;
+}
+.explorer__btn_insert {
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  padding: 0;
+  max-width: 150px;
+  width: 100%;
+  max-height: 50px;
+  height: 100%;
+  background-color: transparent;
+  margin-top: 15px;
+}
+
+.explorer__btn_insert-img {
+  background-color: transparent;
+  padding-top: 10px;
+  padding-bottom: 8px;
+}
+
+.explorer__btn_insert:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 1045px) {
+  .explorer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 282px;
+    height: auto;
+    margin-left: 0;
+    margin-right: 0;
+    align-items: center;
+    width: 100%;
+  }
+  .explorer__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .explorer__div {
+    margin: 0;
+    display: flex;
+    max-width: 400px;
+    width: 100%;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  .explorer_title {
+    font-family: "Inter";
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+  .explorer__btn_form {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 4px;
+  }
+  .explorer__paragraph {
+    font-size: 20px;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-top: 10px;
+    padding: 0px;
+  }
+  .explorer__btn_insert {
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    padding: 0;
+    width: 100%;
+    max-width: 500px;
+    height: 50px;
+    height: 100%;
+    background-color: transparent;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 540px) {
+  .explorer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 282px;
+    margin-left: 0;
+    margin-right: 0;
+    max-height: 286px;
+    align-items: center;
+    width: 100%;
+  }
+  .explorer__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .explorer__div {
+    margin: 0;
+    display: flex;
+    max-width: 282px;
+    width: 100%;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .explorer_title {
+    font-family: "Inter";
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+  .explorer__btn_form {
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+    margin-top: 4px;
+  }
+  .explorer__paragraph {
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-top: 10px;
+    padding: 0px;
+  }
+  .explorer__btn_insert {
+    width: 100%;
+    height: auto;
+    max-width: 282px;
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 885px) and (max-width: 1045px) {
+  .explorer {
+    margin: auto;
+    margin-top: 40px;
+  }
+}
