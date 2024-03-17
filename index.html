@@ -12,7 +12,7 @@
     <title>AroundUs</title>
   </head>
   <body>
-    <div class="page">
+    <div class="page page-opacity">
       <header class="header">
         <img
           class="header__img"
@@ -25,9 +25,9 @@
           <div class="explorer__container">
             <img class="explorer__img" src="./images/oldman.jpg" alt="oldman" />
             <div class="explorer__div">
-              <h1 class="explorer_title">Jacques Cousteau</h1>
+              <h1 id="change" class="explorer_title">Jacques Cousteau</h1>
               <button type="button" class="explorer__btn_form"></button>
-              <p class="explorer__paragraph">Explorador</p>
+              <p id="switch" class="explorer__paragraph">Explorador</p>
             </div>
           </div>
           <button type="button" class="explorer__btn_insert">
@@ -128,31 +128,32 @@
       <footer class="footer">
         <p>&copy; 2024 Around The U.S.</p>
       </footer>
-      <section class="form__close">
-        <div class="form__edit">
-          <button class="form__button-esc" type="buttton"></button>
-          <h2 class="form__edit_title">Editar perfil</h2>
-          <form class="form__edit_change" action="#" method="#">
-            <input
-              placeholder="Nome"
-              class="form__input_text"
-              type="text"
-              id="name"
-              name="nome"
-            />
-            <input
-              placeholder="Sobre mim"
-              class="form__input_text"
-              type="text"
-              id="author"
-              name="autor"
-            />
-
-            <button class="form__edit_change_save" type="submit">Salvar</button>
-          </form>
-        </div>
-      </section>
     </div>
+    <section class="form__close form__close-clean">
+      <div class="form__edit">
+        <button class="form__button-esc" type="buttton"></button>
+        <h2 class="form__edit_title">Editar perfil</h2>
+        <form class="form__edit_change" action="#">
+          <input
+            placeholder="Nome"
+            class="form__input_text"
+            type="text"
+            id="name"
+            name="nome"
+          />
+          <input
+            placeholder="Sobre mim"
+            class="form__input_text form__input_text-job"
+            type="text"
+            id="author"
+            name="autor"
+          />
+
+          <button class="form__edit_change_save" type="submit">Salvar</button>
+        </form>
+      </div>
+    </section>
   </body>
+
   <script src="./index.js"></script>
 </html>

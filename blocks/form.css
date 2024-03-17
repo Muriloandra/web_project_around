@@ -6,17 +6,17 @@
   top: 50%;
   right: 50%;
   margin-right: -215px;
-  margin-top: -300px;
+  margin-top: -350px;
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
+  background-color: #ffffff;
+  border-radius: 20px;
 }
 .form__edit {
   width: 100%;
   height: 100%;
-  background-color: #ffffff;
-  border-radius: 20px;
-  display: none;
 }
 
 .form__edit_title {
@@ -99,7 +99,8 @@
   .form__close {
     width: 288px;
     height: 322px;
-    margin-right: -145px;
+    margin-right: -139px;
+    margin-top: -200px;
   }
 
   .form__button-esc {
@@ -112,7 +113,7 @@
     cursor: pointer;
     position: absolute;
     top: -35px;
-    right: 4px;
+    right: -6px;
     margin: 0;
     color: #ffffff;
   }
