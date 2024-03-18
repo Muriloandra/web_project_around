@@ -44,29 +44,20 @@ let formElment = document.querySelector(".form__edit-change");
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
-  // Fazendo isso, podemos definir nossa própria forma de enviar o formulário.
-  // Explicaremos em mais detalhes posteriormente.
 
-  // Vamos encontrar os campos de formulário do DOM
   let nameInput = document.querySelector("#name");
   let jobInput = document.querySelector("#author");
   let formClean = document.querySelector(".form__close-clean");
 
-  // Pegue os valores de cada campo do valor da propriedade correspondente
   let name = nameInput.value;
   let job = jobInput.value;
 
-  // Selecione os elementos aos quais os valores dos campos serão inseridos
   let nameDisplay = document.querySelector("#change");
   let jobDisplay = document.querySelector("#switch");
 
-  // Insira novos valores usando a propriedade textContent
   nameDisplay.textContent = name;
   jobDisplay.textContent = job;
   formClean.style.display = "none";
 }
-
-// Conecte o handler ao formulário:
-// ele vai observar o evento de submit
 
 formElment.addEventListener("submit", handleProfileFormSubmit);

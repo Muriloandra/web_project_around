@@ -60,7 +60,7 @@
   border: none;
   cursor: pointer;
 }
-.explorer__btn_form:hover {
+.explorer__btn-form:hover {
   opacity: 0.6;
 }
 .explorer__btn-insert {
@@ -81,7 +81,7 @@
   padding-bottom: 8px;
 }
 
-.explorer__btn_insert:hover {
+.explorer__btn-insert:hover {
   opacity: 0.6;
 }
 
@@ -122,7 +122,7 @@
     letter-spacing: 0em;
     text-align: center;
   }
-  .explorer__btn_form {
+  .explorer__btn-form {
     width: 24px;
     height: 24px;
     margin-left: 10px;
@@ -136,7 +136,7 @@
     margin-top: 10px;
     padding: 0px;
   }
-  .explorer__btn_insert {
+  .explorer__btn-insert {
     border: 2px solid #ffffff;
     cursor: pointer;
     padding: 0;
@@ -184,7 +184,7 @@
     letter-spacing: 0em;
     text-align: center;
   }
-  .explorer__btn_form {
+  .explorer__btn-form {
     width: 18px;
     height: 18px;
     margin-left: 10px;
@@ -198,7 +198,7 @@
     margin-top: 10px;
     padding: 0px;
   }
-  .explorer__btn_insert {
+  .explorer__btn-insert {
     width: 100%;
     height: auto;
     max-width: 282px;
