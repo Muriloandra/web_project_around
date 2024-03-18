@@ -90,7 +90,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 282px;
     height: auto;
     margin-left: 0;
     margin-right: 0;
@@ -154,7 +153,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 282px;
     margin-left: 0;
     margin-right: 0;
     max-height: 286px;

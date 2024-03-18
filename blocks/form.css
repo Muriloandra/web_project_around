@@ -10,7 +10,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  display: none;
   background-color: #ffffff;
 }
 .form__edit {
