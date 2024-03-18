@@ -26,7 +26,7 @@
   margin-left: 30px;
 }
 
-.explorer_title {
+.explorer__title {
   font-family: "Inter";
   font-size: 42px;
   font-weight: 500;
@@ -75,7 +75,7 @@
   margin-top: 15px;
 }
 
-.explorer__btn_insert-img {
+.explorer__btn-insert-img {
   background-color: transparent;
   padding-top: 10px;
   padding-bottom: 8px;
@@ -113,7 +113,7 @@
     margin-top: 20px;
     gap: 10px;
   }
-  .explorer_title {
+  .explorer__title {
     font-family: "Inter";
     font-size: 30px;
     font-weight: 500;
@@ -174,7 +174,7 @@
     align-items: center;
     margin-top: 20px;
   }
-  .explorer_title {
+  .explorer__title {
     font-family: "Inter";
     font-size: 22px;
     font-weight: 500;
