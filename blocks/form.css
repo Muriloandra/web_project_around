@@ -11,6 +11,7 @@
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
+  display: none;
 }
 .form__edit {
   width: 100%;
