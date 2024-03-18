@@ -1,6 +1,6 @@
 # Tripleten web_project_around
 
-![Previa da pagina](./images/quickview.png)
+![Previa da pagina](./images/quickview.jpg)
 
 Projeto "AroundUs : Ao redor dos Estados Unidos"
 
