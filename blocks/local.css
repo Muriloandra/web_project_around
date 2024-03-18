@@ -16,14 +16,14 @@
   border-radius: 10px;
   height: 361px;
 }
-.local__img_photo {
+.local__img-photo {
   width: 100%;
   height: 100%;
   max-width: 282px;
   max-height: 282px;
   border-radius: 10px 10px 0px 0px;
 }
-.local__img_text {
+.local__img-text {
   background-color: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -34,7 +34,7 @@
   height: auto;
 }
 
-.local__img_paragraph {
+.local__img-paragraph {
   font-family: "Inter";
   font-size: 24px;
   font-weight: 900;
@@ -47,10 +47,10 @@
   overflow: hidden;
 }
 
-.local__img_btn_heart:hover {
+.local__img-btn-heart:hover {
   opacity: 0.5;
 }
-.local__img_btn_heart-active {
+.local__img-btn-heart-active {
   background-image: url(../images/Union.svg);
   margin-top: 5px;
   width: 21px;
@@ -61,7 +61,7 @@
   background-color: white;
   padding-right: 15px;
 }
-.local__img_btn_heart {
+.local__img-btn-heart {
   margin-top: 5px;
   width: 21px;
   height: 19px;

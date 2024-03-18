@@ -48,7 +48,7 @@
   width: 100%;
   padding-bottom: 20px;
 }
-.explorer__btn_form {
+.explorer__btn-form {
   background-image: url(../images/Edit\ Button.svg);
   width: 24px;
   height: 24px;
@@ -63,7 +63,7 @@
 .explorer__btn_form:hover {
   opacity: 0.6;
 }
-.explorer__btn_insert {
+.explorer__btn-insert {
   border: 2px solid #ffffff;
   cursor: pointer;
   padding: 0;

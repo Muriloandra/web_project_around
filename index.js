@@ -1,8 +1,8 @@
-let openP = document.querySelector(".explorer__btn_form");
+let openP = document.querySelector(".explorer__btn-form");
 let closeP = document.querySelector(".form__button-esc");
 let formClose = document.querySelector(".form__close");
 let openPage = document.querySelector(".page");
-let submiTform = document.querySelector(".form__edit_change_save");
+let submiTform = document.querySelector(".form__edit-change-save");
 
 // Funcao para abertura e fechamento do formulario com opacidade da pagina.
 
@@ -26,21 +26,21 @@ closeP.addEventListener("click", closePage);
 
 // Funcao para alterar os botoes de curtida das fotos.
 
-var buttons = document.querySelectorAll(".local__img_btn_heart");
+var buttons = document.querySelectorAll(".local__img-btn-heart");
 
 buttons.forEach(function (button) {
   button.addEventListener("click", function () {
-    if (button.classList.contains("local__img_btn_heart")) {
-      button.classList.remove("local__img_btn_heart");
-      button.classList.add("local__img_btn_heart-active");
+    if (button.classList.contains("local__img-btn-heart")) {
+      button.classList.remove("local__img-btn-heart");
+      button.classList.add("local__img-btn-heart-active");
     } else {
-      button.classList.add("local__img_btn_heart");
-      button.classList.remove("local__img_btn_heart-active");
+      button.classList.add("local__img-btn-heart");
+      button.classList.remove("local__img-btn-heart-active");
     }
   });
 });
 
-let formElment = document.querySelector(".form__edit_change");
+let formElment = document.querySelector(".form__edit-change");
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
