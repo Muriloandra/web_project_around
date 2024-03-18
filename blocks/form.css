@@ -11,6 +11,9 @@
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
+}
+
+.form__close-clean {
   display: none;
 }
 .form__edit {
