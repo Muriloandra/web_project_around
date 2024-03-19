@@ -1,4 +1,4 @@
-.form__close {
+.form__edit {
   width: 430px;
   height: 330px;
   border-radius: 20px;
@@ -13,15 +13,15 @@
   background-color: #ffffff;
 }
 
-.form__close_clean {
+.form__edit_clean {
   display: none;
 }
-.form__close_edit {
+.form__edit_container {
   width: 100%;
   height: 100%;
 }
 
-.form__close_title {
+.form__edit_title {
   width: 330px;
   height: 23px;
   background-color: #ffffff;
@@ -33,14 +33,14 @@
   text-align: left;
   margin: 34px 64px 10px 36px;
 }
-.form__close_edit-change {
+.form__edit_change {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   margin-top: 45px;
 }
-.form__close_input-text {
+.form__edit_change_text {
   max-width: 358px;
   width: 100%;
   height: 35px;
@@ -50,7 +50,7 @@
   margin-right: 36px;
   margin-top: 20px;
 }
-.form__close_input-text::placeholder {
+.form__edit_change_text::placeholder {
   font-family: "Inter";
   font-size: 14px;
   font-weight: 400;
@@ -58,7 +58,7 @@
   letter-spacing: 0em;
   text-align: left;
 }
-.form__close_edit-change-save {
+.form__edit_change_save {
   width: 358px;
   height: 50px;
   background-color: #000000;
@@ -73,11 +73,11 @@
   text-align: center;
 }
 
-.form__close_edit-change-save:hover {
+.form__edit_change_save:hover {
   opacity: 0.8;
 }
 
-.form__close_button-esc {
+.form__edit_container_button-esc {
   background-image: url(../images/Close\ Icon.png);
   width: 40px;
   height: 40px;
@@ -93,19 +93,19 @@
   color: #ffffff;
 }
 
-.form__button-esc:hover {
+.form__edit_container_button-esc:hover {
   opacity: 0.6;
 }
 
 @media (max-width: 768px) {
-  .form__close {
+  .form__edit {
     width: 288px;
     height: 322px;
     margin-right: -139px;
     margin-top: -200px;
   }
 
-  .form__button-esc {
+  .form__edit_container_button-esc {
     width: 26px;
     height: 26px;
     background-color: transparent;
@@ -119,36 +119,19 @@
     margin: 0;
     color: #ffffff;
   }
-  .form__close_edit {
+  .form__edit_container {
     width: 100%;
     height: 100%;
   }
 
-  .form__close_title {
+  .form__edit_title {
     max-width: 238px;
   }
-  .form__close_edit-change-save {
+  .form__edit_change_save {
     width: 238px;
   }
-  .form__close_input-text {
+  .form__edit_change_text {
     max-width: 238px;
     width: 100%;
-  }
-}
-
-@media (max-width: 420px) {
-  .form__close_button-esc {
-    width: 26px;
-    height: 26px;
-    background-color: transparent;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top: -35px;
-    right: 4px;
-    margin: 0;
-    color: #ffffff;
   }
 }
