@@ -1,8 +1,8 @@
 let openP = document.querySelector(".explorer__btn-form");
-let closeP = document.querySelector(".form__edit_container_button-esc");
-let formClose = document.querySelector(".form__edit");
+let closeP = document.querySelector(".form__edit-container-button-esc");
+let formClose = document.querySelector(".form");
 let openPage = document.querySelector(".page");
-let submiTform = document.querySelector(".form__edit_change_save");
+let submiTform = document.querySelector(".form__edit-change-save");
 
 // Funcao para abertura e fechamento do formulario com opacidade da pagina.
 
@@ -40,14 +40,14 @@ buttons.forEach(function (button) {
   });
 });
 
-let formElment = document.querySelector(".form__edit_change");
+let formElment = document.querySelector(".form__edit-change");
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
 
   let nameInput = document.querySelector("#name");
   let jobInput = document.querySelector("#author");
-  let formClean = document.querySelector(".form__edit");
+  let formClean = document.querySelector(".form-clean");
 
   let name = nameInput.value;
   let job = jobInput.value;
