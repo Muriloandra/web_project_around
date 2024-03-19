@@ -32,6 +32,7 @@
   max-width: 250px;
   margin-left: 10px;
   height: auto;
+  align-items: center;
 }
 
 .local__img-paragraph {
@@ -52,7 +53,7 @@
 }
 .local__img-btn-heart-active {
   background-image: url(../images/Union.svg);
-  margin-top: 5px;
+  /* margin-top: 5px; */
   width: 21px;
   height: 19px;
   background-size: cover;
@@ -62,7 +63,7 @@
   padding-right: 15px;
 }
 .local__img-btn-heart {
-  margin-top: 5px;
+  /* margin-top: 5px; */
   width: 21px;
   height: 19px;
   background-image: url(../images/Vector.svg);
