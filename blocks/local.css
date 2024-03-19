@@ -87,7 +87,7 @@
   .local {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    max-width: 300px;
+    max-width: 282px;
     margin: auto;
     margin-top: 50px;
   }
