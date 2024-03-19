@@ -125,7 +125,7 @@
     width: 24px;
     height: 24px;
     margin-left: 10px;
-    margin-top: 4px;
+    /* margin-top: 4px; */
   }
   .explorer__paragraph {
     font-size: 20px;
@@ -186,7 +186,7 @@
     width: 18px;
     height: 18px;
     margin-left: 10px;
-    margin-top: 4px;
+    /* margin-top: 4px; */
   }
   .explorer__paragraph {
     font-size: 14px;
