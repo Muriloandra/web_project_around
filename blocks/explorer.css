@@ -175,15 +175,15 @@
   }
   .explorer__title {
     font-family: "Inter";
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     line-height: 27px;
     letter-spacing: 0em;
     text-align: center;
   }
   .explorer__btn-form {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     margin-left: 10px;
     /* margin-top: 4px; */
   }
