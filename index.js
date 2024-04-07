@@ -77,25 +77,3 @@ function handleProfileFormSubmit(evt) {
 }
 
 formElment.addEventListener("submit", handleProfileFormSubmit);
-
-// let formingElement = document.querySelector(".forming__edit-change");
-
-// function handleProfileFormingSubmit(evt) {
-//   evt.preventDefault();
-
-//   let titleInput = document.querySelector("#title");
-//   let linkInput = document.querySelector("#link");
-//   let formingClean = document.querySelector(".forming-clean");
-
-//   let title = titleInput.value;
-//   let link = linkInput.value;
-
-//   // let nameDisplay = document.querySelector("#change");
-//   // let jobDisplay = document.querySelector("#switch");
-
-//   // titleDisplay.textContent = title;
-//   // linkDisplay.textContent = link;
-//   formingClean.style.display = "none";
-// }
-
-// formingElement.addEventListener("submit", handleProfileFormingSubmit);
