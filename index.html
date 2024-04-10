@@ -38,86 +38,86 @@
             />
           </button>
         </section>
-        <section class="local">
-          <div class="local__img">
-            <img id="newimage"
-              class="local__img-photo"
-              src="./images/gasparilla.jpg"
-              alt="imagem de uma varanda de frente ao mar"
-            />
-            <div class="local__img-text">
-              <p class="local__img-paragraph">Gasparilla island</p>
-              <button
-                type="button"
-                class="local__img-btn-heart local__img-btn-heart-active"
-              ></button>
-            </div>
-          </div>
-          <div class="local__img">
-            <img
-              class="local__img-photo"
-              src="./images/lake.jpg"
-              alt="lago com apartamentos ao redor"
-            />
-            <div class="local__img-text">
-              <p class="local__img-paragraph">Lakes Port</p>
-              <button
-                type="button"
-                class="local__img-btn-heart local__img-btn-heart-active"
-              ></button>
-            </div>
-          </div>
-          <div class="local__img">
-
-            <img
-              class="local__img-photo"
-              src="./images/palmbeach.jpg"
-              alt="imagem  frente ao mar"
-            />
-            <div class="local__img-text">
-              <p class="local__img-paragraph">Palm Beach</p>
-              <button
-                type="button"
-                class="local__img-btn-heart local__img-btn-heart-active"
-              ></button>
-            </div>
-          </div>
-          <div class="local__img">
-            <img
-              class="local__img-photo"
-              src="./images/rotonda.jpg"
-              alt="imagem de uma ponte com duas flores "
-            />
-            <div class="local__img-text">
-              <p class="local__img-paragraph">Rotonda</p>
-              <button
-                type="button"
-                class="local__img-btn-heart local__img-btn-heart-active"
-              ></button>
-            </div>
-          </div>
-          <div class="local__img">
-            <img
-              class="local__img-photo"
-              src="./images/venice.jpg"
-              alt="imagem de um sapo numa fonte"
-            />
-            <div class="local__img-text">
-              <p class="local__img-paragraph">Venice</p>
-              <button
-                type="button"
-                class="local__img-btn-heart local__img-btn-heart-active"
-              ></button>
-            </div>
-          </div>
-          <div class="local__img">
-            <img
+        <section id="cards"  class="local">
+          <div  class="local__img">
+            <button class="local__img-delete"><img src="./images/Trash.png"></button>
+            <img id="imgLocal"
               class="local__img-photo"
               src="./images/engleawood.jpg"
-              alt="imagem de uma varanda de frente ao mar"
+              alt=""
             />
             <div class="local__img-text">
-              <p class="local__img-paragraph">Engleawood</p>
+              <p id="paraImg" class="local__img-paragraph"></p>
+              <button
+                type="button"
+                class="local__img-btn-heart local__img-btn-heart-active"
+              ></button>
+            </div>
+          </div>
+          <div  class="local__img">
+            <img id="imgLocal"
+              class="local__img-photo"
+              src=""
+              alt=""
+            />
+            <div class="local__img-text">
+              <p id="paraImg" class="local__img-paragraph"></p>
+              <button
+                type="button"
+                class="local__img-btn-heart local__img-btn-heart-active"
+              ></button>
+            </div>
+          </div>
+          <div  class="local__img">
+            <img id="imgLocal"
+              class="local__img-photo"
+              src=""
+              alt=""
+            />
+            <div class="local__img-text">
+              <p id="paraImg" class="local__img-paragraph"></p>
+              <button
+                type="button"
+                class="local__img-btn-heart local__img-btn-heart-active"
+              ></button>
+            </div>
+          </div>
+          <div  class="local__img">
+            <img id="imgLocal"
+              class="local__img-photo"
+              src=""
+              alt=""
+            />
+            <div class="local__img-text">
+              <p id="paraImg" class="local__img-paragraph"></p>
+              <button
+                type="button"
+                class="local__img-btn-heart local__img-btn-heart-active"
+              ></button>
+            </div>
+          </div>
+          <div  class="local__img">
+            <img id="imgLocal"
+              class="local__img-photo"
+              src=""
+              alt=""
+            />
+            <div class="local__img-text">
+              <p id="paraImg" class="local__img-paragraph"></p>
+              <button
+                type="button"
+                class="local__img-btn-heart local__img-btn-heart-active"
+              ></button>
+            </div>
+          </div>
+          <div  class="local__img">
+            <img id="imgLocal"
+              class="local__img-photo"
+              src=""
+              alt=""
+            />
+            <div class="local__img-text">
+              <p id="paraImg" class="local__img-paragraph"></p>
               <button
                 type="button"
                 class="local__img-btn-heart local__img-btn-heart-active"
@@ -158,29 +158,29 @@
             <div class="forming__edit-container">
               <button class="forming__edit-container-button-esc" type="button"></button>
               <h2 class="form__edit-title">Novo Local</h2>
-              <form class="forming__edit-change" action="#">
+              <form id="forming" class="forming__edit-change" action="#">
                 <input
                   placeholder="Titulo"
                   class="form__edit-change-text"
                   type="text"
-                  id="name"
+                  id="cardName"
                   name="nome"
                   required
                 />
                 <input
                   placeholder="Link de imagem"
-                  class="form__edit-change-text"
+                  class="form__edit-change-text-link"
                   type="text"
-                  id="job"
+                  id="cardLink"
                   name="autor"
                   required
                 />
 
-          <button class="form__edit-change-save" type="submit">Criar</button>
+          <button id="addCardButton" class="forming__edit-change-save" type="button">Criar</button>
         </form>
       </div>
     </section>
-    <script src="./vendor/cards.js"></script>
+    <script src="./Form.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>

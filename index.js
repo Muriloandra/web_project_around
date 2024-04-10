@@ -6,6 +6,7 @@ let openPage = document.querySelector(".page");
 let submiTform = document.querySelector(".form__edit-change-save");
 let openBut = document.querySelector(".explorer__btn-insert");
 let closeB = document.querySelector(".forming");
+let buttonForm = document.querySelector(".forming__edit-change-save");
 // Funcao para abertura e fechamento do formulario com opacidade da pagina.
 
 function openForm() {
@@ -20,6 +21,7 @@ function openImg() {
 }
 function closeImg() {
   closeB.style.display = "none";
+  openPage.style.opacity = "1";
 }
 
 function closeForm() {
@@ -33,15 +35,15 @@ function closePage() {
 
 openBut.addEventListener("click", openImg);
 closeBut.addEventListener("click", closeImg);
-closeBut.addEventListener("click", closePage);
 openP.addEventListener("click", openForm);
 closeP.addEventListener("click", closeForm);
 closeP.addEventListener("click", closePage);
 submiTform.addEventListener("click", closePage);
+buttonForm.addEventListener("click", closeImg);
 
 // Funcao para alterar os botoes de curtida das fotos.
 
-var buttons = document.querySelectorAll(".local__img-btn-heart");
+const buttons = document.querySelectorAll(".local__img-btn-heart");
 
 buttons.forEach(function (button) {
   button.addEventListener("click", function () {
@@ -56,6 +58,8 @@ buttons.forEach(function (button) {
 });
 
 let formElment = document.querySelector(".form__edit-change");
+
+// adicionar nome e profissao no formulario
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
