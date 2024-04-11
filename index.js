@@ -7,6 +7,7 @@ let submiTform = document.querySelector(".form__edit-change-save");
 let openBut = document.querySelector(".explorer__btn-insert");
 let closeB = document.querySelector(".forming");
 let buttonForm = document.querySelector(".forming__edit-change-save");
+
 // Funcao para abertura e fechamento do formulario com opacidade da pagina.
 
 function openForm() {
@@ -81,3 +82,6 @@ function handleProfileFormSubmit(evt) {
 }
 
 formElment.addEventListener("submit", handleProfileFormSubmit);
+
+// Selecionando todos os botões de exclusão
+const deleteButtons = document.querySelectorAll(".local__img-delete");

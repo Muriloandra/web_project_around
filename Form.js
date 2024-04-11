@@ -25,12 +25,14 @@ const initialCards = [
   },
 ];
 
+// adicionando as variaves
 const formingClean = document.getElementById("forming");
 const newNameInput = document.getElementById("cardName");
 const newLinkInput = document.getElementById("cardLink");
 const cardsContainer = document.getElementById("cards");
 
-function addToggleButtonToNewCard() {
+// funcao do like para implementar nos novos cards
+function buttonLike() {
   const newCardButtons = document.querySelectorAll(".local__img-btn-heart");
   newCardButtons.forEach((button) => {
     button.addEventListener("click", function () {
@@ -45,7 +47,8 @@ function addToggleButtonToNewCard() {
   });
 }
 
-function renderCard(card, container) {
+// criar o card que contem a imagem e o nome
+function addCard(card, container) {
   const cardElement = document.createElement("div");
   cardElement.innerHTML = `
     <div class="local__img">
@@ -60,18 +63,33 @@ function renderCard(card, container) {
       </div>
     </div>
   `;
+
+  // variavel do botao lixeira
+  const deleteCard = cardElement.querySelector(".local__img-delete");
+
+  // evento para remover a div ao clicar na lixeira
+  deleteCard.addEventListener("click", function () {
+    // Obtém o elemento pai da div .local__img e remove-o
+    const divDaddy = cardElement.parentElement;
+
+    divDaddy.removeChild(cardElement);
+  });
+
   container.appendChild(cardElement);
 }
 
-function renderCards(cards, container) {
+// funcao que recebe a lista de cards
+function addCards(cards, container) {
   container.innerHTML = "";
   cards.forEach((card) => {
-    renderCard(card, container);
+    addCard(card, container);
   });
 }
 
-renderCards(initialCards, cardsContainer);
+// Adiciona os cards já existentes
+addCards(initialCards, cardsContainer);
 
+// evento do clique para adicionar novo card
 const addButton = document.getElementById("addCardButton");
 addButton.addEventListener("click", function (event) {
   event.preventDefault();
@@ -82,14 +100,14 @@ addButton.addEventListener("click", function (event) {
     ? newLinkInput.value
     : "https://plus.unsplash.com/premium_photo-1695186450459-8d3c896ca573?q=80&w=4140&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
-  // Adiciona um novo card com os dados fornecidos
+  // envia um novo card com os dados fornecidos
   const newCard = { name: newName, link: newLink };
   initialCards.push(newCard);
 
-  renderCard(newCard, cardsContainer);
+  addCard(newCard, cardsContainer);
 
   //  Chama a funcao para alternar os botoes de like
-  addToggleButtonToNewCard();
+  buttonLike();
 
   // Limpa os inputs
   newNameInput.value = "";
