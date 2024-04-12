@@ -53,7 +53,7 @@ function addCard(card, container) {
   cardElement.innerHTML = `
     <div class="local__img">
     <button class="local__img-delete"><img src="./images/Trash.png"></button>
-      <img id="imgLocal" class="local__img-photo" src="${card.link}" alt="${card.name}">
+      <img id="imgLocal" class="local__img-photo " src="${card.link}" alt="${card.name}">
       <div class="local__img-text">
         <p id="paraImg" class="local__img-paragraph">${card.name}</p>
         <button
@@ -62,23 +62,46 @@ function addCard(card, container) {
               ></button>
       </div>
     </div>
+    <div class="local__popup">
+    <div class="local__popup-display">
+    <button class="local__popup_but" type="button"></button>>
+              <img class="local__popup-img" src="${card.link}" alt="${card.name}">
+              <p class="local__popup-paragraph">${card.name} </p>
+              </div>
+            </div>
   `;
 
-  // variavel do botao lixeira
+  // Variavel do botao lixeira
   const deleteCard = cardElement.querySelector(".local__img-delete");
 
-  // evento para remover a div ao clicar na lixeira
+  // Evento para remover a div ao clicar na lixeira
   deleteCard.addEventListener("click", function () {
-    // Obtém o elemento pai da div .local__img e remove-o
+    // Pega o elemento pai da div .local__img e remove
     const divDaddy = cardElement.parentElement;
 
     divDaddy.removeChild(cardElement);
   });
 
+  //  Ativa o popup para aumentar a img
+  const cardImage = cardElement.querySelector(".local__img-photo");
+
+  cardImage.addEventListener("click", function () {
+    const popUp = cardElement.querySelector(".local__popup");
+    popUp.style.display = "block";
+  });
+
+  // Fecha a imagem
+  const popupCloseButton = cardElement.querySelector(".local__popup_but");
+
+  popupCloseButton.addEventListener("click", function () {
+    const popUp = cardElement.querySelector(".local__popup");
+    popUp.style.display = "none";
+  });
+
   container.appendChild(cardElement);
 }
 
-// funcao que recebe a lista de cards
+// Funcao que recebe a lista de cards
 function addCards(cards, container) {
   container.innerHTML = "";
   cards.forEach((card) => {
@@ -86,10 +109,10 @@ function addCards(cards, container) {
   });
 }
 
-// Adiciona os cards já existentes
+// Adiciona os cards ja existentes
 addCards(initialCards, cardsContainer);
 
-// evento do clique para adicionar novo card
+// Evento do clique para adicionar novo card
 const addButton = document.getElementById("addCardButton");
 addButton.addEventListener("click", function (event) {
   event.preventDefault();

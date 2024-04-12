@@ -82,6 +82,3 @@ function handleProfileFormSubmit(evt) {
 }
 
 formElment.addEventListener("submit", handleProfileFormSubmit);
-
-// Selecionando todos os botões de exclusão
-const deleteButtons = document.querySelectorAll(".local__img-delete");
