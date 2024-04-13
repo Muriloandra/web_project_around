@@ -47,17 +47,17 @@ function buttonLike() {
   });
 }
 
-// criar o card que contem a imagem e o nome
+// Criar o card que contem a imagem e o nome
 function addCard(card, container) {
   const cardTemplate = document.getElementById("card-template");
   const cardClone = document.importNode(cardTemplate.content, true);
 
-  // Preencha os dados do card clonado
+  // Preencha os dados do card
   cardClone.querySelector(".local__img-photo").src = card.link;
   cardClone.querySelector(".local__img-photo").alt = card.name;
   cardClone.querySelector(".local__img-paragraph").textContent = card.name;
 
-  // Preencha os dados do popup do card clonado
+  // Recebe o Card
   const popupImg = cardClone.querySelector(".local__popup-img");
   popupImg.src = card.link;
   popupImg.alt = card.name;
@@ -65,7 +65,7 @@ function addCard(card, container) {
   const popupParagraph = cardClone.querySelector(".local__popup-paragraph");
   popupParagraph.textContent = card.name;
 
-  // Adicione eventos aos botões do card clonado
+  // Deletar o card
   const deleteButton = cardClone.querySelector(".local__img-delete");
 
   deleteButton.addEventListener("click", function () {
@@ -73,7 +73,7 @@ function addCard(card, container) {
     container.removeChild(cardElement); // Remove o card
   });
 
-  // Adicione eventos aos botões do card clonado
+  // Abrir popUp
   const popupButtons = cardClone.querySelectorAll(".local__img-photo");
 
   popupButtons.forEach(function (popupButton) {
@@ -83,7 +83,7 @@ function addCard(card, container) {
     });
   });
 
-  // Adicione eventos aos botões do card clonado
+  // Fechar popUp
   const closeButton = cardClone.querySelector(".local__popup_but");
 
   closeButton.addEventListener("click", function () {
