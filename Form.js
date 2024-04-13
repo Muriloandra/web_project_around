@@ -49,61 +49,53 @@ function buttonLike() {
 
 // criar o card que contem a imagem e o nome
 function addCard(card, container) {
-  const cardElement = document.createElement("div");
-  cardElement.innerHTML = `
-    <div class="local__img">
-    <button class="local__img-delete"><img src="./images/Trash.png"></button>
-      <img id="imgLocal" class="local__img-photo " src="${card.link}" alt="${card.name}">
-      <div class="local__img-text">
-        <p id="paraImg" class="local__img-paragraph">${card.name}</p>
-        <button
-                type="button"
-                class="local__img-btn-heart local__img-btn-heart-active"
-              ></button>
-      </div>
-    </div>
-    <div class="local__popup">
-    <div class="local__popup-display">
-    <button class="local__popup_but" type="button"></button>>
-              <img class="local__popup-img" src="${card.link}" alt="${card.name}">
-              <p class="local__popup-paragraph">${card.name} </p>
-              </div>
-            </div>
-  `;
+  const cardTemplate = document.getElementById("card-template");
+  const cardClone = document.importNode(cardTemplate.content, true);
 
-  // Variavel do botao lixeira
-  const deleteCard = cardElement.querySelector(".local__img-delete");
+  // Preencha os dados do card clonado
+  cardClone.querySelector(".local__img-photo").src = card.link;
+  cardClone.querySelector(".local__img-photo").alt = card.name;
+  cardClone.querySelector(".local__img-paragraph").textContent = card.name;
 
-  // Evento para remover a div ao clicar na lixeira
-  deleteCard.addEventListener("click", function () {
-    // Pega o elemento pai da div .local__img e remove
-    const divDaddy = cardElement.parentElement;
+  // Preencha os dados do popup do card clonado
+  const popupImg = cardClone.querySelector(".local__popup-img");
+  popupImg.src = card.link;
+  popupImg.alt = card.name;
 
-    divDaddy.removeChild(cardElement);
+  const popupParagraph = cardClone.querySelector(".local__popup-paragraph");
+  popupParagraph.textContent = card.name;
+
+  // Adicione eventos aos botões do card clonado
+  const deleteButton = cardClone.querySelector(".local__img-delete");
+
+  deleteButton.addEventListener("click", function () {
+    const cardElement = deleteButton.closest(".local__img"); // Encontra o elemento do card
+    container.removeChild(cardElement); // Remove o card
   });
 
-  //  Ativa o popup para aumentar a img
-  const cardImage = cardElement.querySelector(".local__img-photo");
+  // Adicione eventos aos botões do card clonado
+  const popupButtons = cardClone.querySelectorAll(".local__img-photo");
 
-  cardImage.addEventListener("click", function () {
-    const popUp = cardElement.querySelector(".local__popup");
-    popUp.style.display = "block";
+  popupButtons.forEach(function (popupButton) {
+    popupButton.addEventListener("click", function () {
+      const popUp = popupButton.parentElement.nextElementSibling;
+      popUp.style.display = "block";
+    });
   });
 
-  // Fecha a imagem
-  const popupCloseButton = cardElement.querySelector(".local__popup_but");
+  // Adicione eventos aos botões do card clonado
+  const closeButton = cardClone.querySelector(".local__popup_but");
 
-  popupCloseButton.addEventListener("click", function () {
-    const popUp = cardElement.querySelector(".local__popup");
+  closeButton.addEventListener("click", function () {
+    const popUp = closeButton.parentElement;
     popUp.style.display = "none";
   });
 
-  container.appendChild(cardElement);
+  container.appendChild(cardClone);
 }
 
 // Funcao que recebe a lista de cards
 function addCards(cards, container) {
-  container.innerHTML = "";
   cards.forEach((card) => {
     addCard(card, container);
   });

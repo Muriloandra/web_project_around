@@ -39,34 +39,36 @@
           </button>
         </section>
         <section id="cards"  class="local">
-          <div  class="local__img">
-            <button class="local__img-delete"><img src="./images/Trash.png"></button>
-            <img id="imgLocal"
-              class="local__img-photo "
-              src=""
-              alt=""
-            />
-            <div class="local__img-text">
-              <p id="paraImg" class="local__img-paragraph"></p>
-              <button
-                type="button"
-                class="local__img-btn-heart local__img-btn-heart-active"
-              ></button>
+          <template id="card-template">
+            <div  class="local__img">
+              <button class="local__img-delete"><img src="./images/Trash.png"></button>
+              <img id="imgLocal"
+                class="local__img-photo "
+                src=""
+                alt=""
+              />
+              <div class="local__img-text">
+                <p id="paraImg" class="local__img-paragraph"></p>
+                <button
+                  type="button"
+                  class="local__img-btn-heart local__img-btn-heart-active"
+                ></button>
+              </div>
             </div>
-          </div>
-            <div class="local__popup">
-              <div class="local__popup-display">
-                <button class="local__popup_but" type="button"></button>>
-                <img class="local__popup-img" src="" alt="">
-                <p class="local__popup-paragraph"></p>
+              <div class="local__popup">
+                <div class="local__popup-display">
+                  <img class="local__popup-img" src="" alt="">
+                  <p class="local__popup-paragraph"></p>
+                </div>
+                <button class="local__popup_but" type="button"></button>
               </div>
 
-            </div>
+          </template>
 
         </section>
-
-
       </main>
+
+
       <footer class="footer">
         <p>&copy; 2024 Around The U.S.</p>
       </footer>
@@ -116,7 +118,6 @@
                   name="autor"
                   required
                 />
-
           <button id="addCardButton" class="forming__edit-change-save" type="button">Criar</button>
         </form>
       </div>
