@@ -18,25 +18,25 @@
   cursor: pointer;
 }
 .local__popup {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+.local__popup-open {
   max-width: 800px;
   width: 100%;
   height: 540px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffff;
-  z-index: 1;
-  display: none;
+  position: relative;
+  top: 20%;
 }
 
 .local__popup_but {
-  position: absolute;
-  top: -8%;
-  right: -5%;
+  position: relative;
+  top: 50%;
+  right: -100%;
   width: 40px;
   height: 40px;
   border: none;
@@ -50,19 +50,18 @@
   display: flex;
   flex-direction: column;
   align-items: baseline;
-  margin-top: 550px;
+  opacity: 1;
+  position: relative;
+  left: 15%;
 }
 
 .local__popup_but:hover {
   opacity: 0.6;
 }
 .local__popup-img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 800px;
+  width: 100%;
   max-height: 540px;
+  opacity: 1;
 }
 
 .local__popup-paragraph {
@@ -71,11 +70,9 @@
   font-weight: 400;
   text-align: right;
   color: white;
+  margin-top: 16px;
 }
 
-.local__popup-open {
-  pointer-events: none;
-}
 .local__img-delete {
   position: absolute;
   top: 18px;
@@ -85,6 +82,7 @@
   border: none;
   cursor: pointer;
   background: transparent;
+  opacity: 1;
 }
 
 .local__img-delete:hover img {

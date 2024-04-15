@@ -29,7 +29,7 @@ const initialCards = [
 const formingClean = document.getElementById("forming");
 const newNameInput = document.getElementById("cardName");
 const newLinkInput = document.getElementById("cardLink");
-const cardsContainer = document.getElementById("cards");
+const cardsContainer = document.getElementById("card");
 
 // funcao do like para implementar nos novos cards
 function buttonLike() {
@@ -50,26 +50,50 @@ function buttonLike() {
 // Criar o card que contem a imagem e o nome
 function addCard(card, container) {
   const cardTemplate = document.getElementById("card-template");
-  const cardClone = document.importNode(cardTemplate.content, true);
+  const cardClone = cardTemplate.content
+    .querySelector(".local__img")
+    .cloneNode(true);
 
   // Preencha os dados do card
   cardClone.querySelector(".local__img-photo").src = card.link;
   cardClone.querySelector(".local__img-photo").alt = card.name;
   cardClone.querySelector(".local__img-paragraph").textContent = card.name;
 
-  // Recebe o Card
-  const popupImg = cardClone.querySelector(".local__popup-img");
-  popupImg.src = card.link;
-  popupImg.alt = card.name;
+  cardClone
+    .querySelector(".local__img-photo")
+    .addEventListener("click", function (event) {
+      // seleciona o popUp
+      const popUp = document.querySelector(".local__popup");
 
-  const popupParagraph = cardClone.querySelector(".local__popup-paragraph");
-  popupParagraph.textContent = card.name;
+      // Seleciona a imagem expandida e o parágrafo dentro da popUp
+      const popupImg = document.querySelector(".local__popup-img");
+      const popupParagraph = document.querySelector(".local__popup-paragraph");
+
+      const imageSrc =
+        event.target.parentElement.children[1].getAttribute("src");
+
+      const textContent = event.target.parentElement.children[2].querySelector(
+        ".local__img-paragraph"
+      ).textContent;
+
+      popupImg.src = imageSrc;
+      popupParagraph.textContent = textContent;
+
+      popUp.style.display = "block";
+
+      document
+        .querySelector(".local__popup_but")
+        .addEventListener("click", function () {
+          // Oculta a popUp
+          popUp.style.display = "none";
+        });
+    });
 
   // Deletar o card
   const deleteButton = cardClone.querySelector(".local__img-delete");
 
   deleteButton.addEventListener("click", function () {
-    const cardElement = deleteButton.closest(".local__img"); // Encontra o elemento do card
+    const cardElement = deleteButton.closest(".local__img");
     container.removeChild(cardElement); // Remove o card
   });
 
@@ -81,14 +105,6 @@ function addCard(card, container) {
       const popUp = popupButton.parentElement.nextElementSibling;
       popUp.style.display = "block";
     });
-  });
-
-  // Fechar popUp
-  const closeButton = cardClone.querySelector(".local__popup_but");
-
-  closeButton.addEventListener("click", function () {
-    const popUp = closeButton.parentElement;
-    popUp.style.display = "none";
   });
 
   container.appendChild(cardClone);
