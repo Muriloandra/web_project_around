@@ -146,19 +146,12 @@ function addCard(card, container) {
   // Deletar o card
   const deleteButton = cardClone.querySelector(".local__img-delete");
 
-  deleteButton.addEventListener("click", function () {
+  function removeCard() {
     const cardElement = deleteButton.closest(".local__img");
     container.removeChild(cardElement); // Remove o card
-  });
+  }
 
-  // Abrir popUp
-  const popupButtons = cardClone.querySelectorAll(".local__img-photo");
-
-  popupButtons.forEach(function (popupButton) {
-    popupButton.addEventListener("click", function () {
-      const popUp = popupButton.parentElement.nextElementSibling;
-    });
-  });
+  deleteButton.addEventListener("click", removeCard);
 
   container.appendChild(cardClone);
 }
@@ -183,7 +176,7 @@ function likeCard(button) {
   }
 }
 
-function buttoLikeCard(buttons) {
+function likeCardbutton(buttons) {
   buttons.forEach(function (button) {
     button.addEventListener("click", function () {
       likeCard(button);
@@ -192,20 +185,22 @@ function buttoLikeCard(buttons) {
 }
 
 const likeButtons = document.querySelectorAll(".local__img-btn-heart");
-buttoLikeCard(likeButtons);
+likeCardbutton(likeButtons);
 
 // Evento do clique para adicionar novo card
 const addButton = document.getElementById("addCardButton");
-addButton.addEventListener("click", function (event) {
+
+// Função para adicionar um novo card
+function addCardform(event) {
   event.preventDefault();
 
-  //  variavel para caso o usuario nao insira nada
+  //  variável para caso o usuário não insira nada
   const newName = newNameInput.value ? newNameInput.value : "Guest";
   const newLink = newLinkInput.value
     ? newLinkInput.value
     : "https://plus.unsplash.com/premium_photo-1695186450459-8d3c896ca573?q=80&w=4140&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
-  // envia um novo card com os dados fornecidos
+  // Envia um novo card com os dados fornecidos
   const newCard = { name: newName, link: newLink };
   initialCards.push(newCard);
 
@@ -215,6 +210,18 @@ addButton.addEventListener("click", function (event) {
   newNameInput.value = "";
   newLinkInput.value = "";
 
+  // Atualiza a lista de botões de like
   const newlikeButtons = document.querySelectorAll(".local__img-btn-heart");
-  buttoLikeCard(newlikeButtons);
-});
+  likeCardbutton(newlikeButtons);
+}
+
+addButton.addEventListener("click", addCardform);
+//  funcao da tecla enter
+function tapEnter(event) {
+  if (newNameInput.value !== "" && event.key === "Enter") {
+    addCardform(event);
+    closeImg();
+  }
+}
+
+document.addEventListener("keyup", tapEnter);
