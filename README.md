@@ -1,6 +1,16 @@
 # Tripleten web_project_around
 
+Previa da pagina e das funcionalidades
+
 ![Previa da pagina](./images/quickview.jpg)
+
+![Previa da pagina](./images/formLink.png)
+
+![Previa da pagina](./images/buttonLike.png)
+
+![Previa da pagina](./images/buttonDelete.png)
+
+![Previa da pagina](./images/popUp.png)
 
 Projeto "AroundUs : Ao redor dos Estados Unidos"
 
@@ -14,16 +24,15 @@ Navegação simples: A navegação é de facil acesso, proporcionando uma experi
 
 Responsividade: O layout se adapta a diferentes tamanhos de tela. Desktop, tablet e smartphone
 
-Personalização do Perfil: Os usuários podem alterar o nome e o cargo do perfil exibido.
+Personalização do Perfil: Os usuários podem alterar o nome, cargo do perfil exibido, inserir imagem via link url, alterar o nome da imagem, abrir e fechar a imagem.
 
 Likes nas Fotos: Os coracoes nas fotos sao clicaveis, podendo deixar o seu like caso goste da foto.
+
 Tecnologias Utilizadas
 
 HTML: Utilizado para estruturar o conteúdo da página, permitindo uma organização dos elementos.
 
-
 CSS: Responsável pela estilização e aparência visual do projeto.
-
 
 JavaScript: Implementado para adicionar interatividade ao projeto ; like nas fotos, alteracao de dados no perfil e abertura e fechamento do popup formulario.
 
