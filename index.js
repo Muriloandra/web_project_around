@@ -42,22 +42,6 @@ closeP.addEventListener("click", closePage);
 submiTform.addEventListener("click", closePage);
 buttonForm.addEventListener("click", closeImg);
 
-// Funcao para alterar os botoes de curtida das fotos.
-
-const buttons = document.querySelectorAll(".local__img-btn-heart");
-
-buttons.forEach(function (button) {
-  button.addEventListener("click", function () {
-    if (button.classList.contains("local__img-btn-heart")) {
-      button.classList.remove("local__img-btn-heart");
-      button.classList.add("local__img-btn-heart-active");
-    } else {
-      button.classList.add("local__img-btn-heart");
-      button.classList.remove("local__img-btn-heart-active");
-    }
-  });
-});
-
 let formElment = document.querySelector(".form__edit-change");
 
 // adicionar nome e profissao no formulario

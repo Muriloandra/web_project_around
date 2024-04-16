@@ -31,22 +31,6 @@ const newNameInput = document.getElementById("cardName");
 const newLinkInput = document.getElementById("cardLink");
 const cardsContainer = document.getElementById("card");
 
-// funcao do like para implementar nos novos cards
-function buttonLike() {
-  const newCardButtons = document.querySelectorAll(".local__img-btn-heart");
-  newCardButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      if (button.classList.contains("local__img-btn-heart")) {
-        button.classList.remove("local__img-btn-heart");
-        button.classList.add("local__img-btn-heart-active");
-      } else {
-        button.classList.add("local__img-btn-heart");
-        button.classList.remove("local__img-btn-heart-active");
-      }
-    });
-  });
-}
-
 // Criar o card que contem a imagem e o nome
 function addCard(card, container) {
   const cardTemplate = document.getElementById("card-template");
@@ -120,6 +104,27 @@ function addCards(cards, container) {
 // Adiciona os cards ja existentes
 addCards(initialCards, cardsContainer);
 
+function likeCard(button) {
+  if (button.classList.contains("local__img-btn-heart")) {
+    button.classList.remove("local__img-btn-heart");
+    button.classList.add("local__img-btn-heart-active");
+  } else {
+    button.classList.add("local__img-btn-heart");
+    button.classList.remove("local__img-btn-heart-active");
+  }
+}
+
+function buttoLikeCard(buttons) {
+  buttons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      likeCard(button);
+    });
+  });
+}
+
+const likeButtons = document.querySelectorAll(".local__img-btn-heart");
+buttoLikeCard(likeButtons);
+
 // Evento do clique para adicionar novo card
 const addButton = document.getElementById("addCardButton");
 addButton.addEventListener("click", function (event) {
@@ -137,10 +142,10 @@ addButton.addEventListener("click", function (event) {
 
   addCard(newCard, cardsContainer);
 
-  //  Chama a funcao para alternar os botoes de like
-  buttonLike();
-
   // Limpa os inputs
   newNameInput.value = "";
   newLinkInput.value = "";
+
+  const newlikeButtons = document.querySelectorAll(".local__img-btn-heart");
+  buttoLikeCard(newlikeButtons);
 });
