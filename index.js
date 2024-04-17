@@ -116,16 +116,15 @@ function addCard(card, container) {
   cardClone
     .querySelector(".local__img-photo")
     .addEventListener("click", function (event) {
-      // seleciona o popUp
-      const popUp = document.querySelector(".local__popup");
+      // Seleciona o popUp
+      const popUp = document.querySelector(".popup");
 
       // Seleciona a imagem expandida e o parágrafo dentro da popUp
-      const popupImg = document.querySelector(".local__popup-img");
-      const popupParagraph = document.querySelector(".local__popup-paragraph");
+      const popupImg = document.querySelector(".popup-img");
+      const popupParagraph = document.querySelector(".popup-paragraph");
 
       const imageSrc =
         event.target.parentElement.children[1].getAttribute("src");
-
       const textContent = event.target.parentElement.children[2].querySelector(
         ".local__img-paragraph"
       ).textContent;
@@ -136,7 +135,7 @@ function addCard(card, container) {
       popUp.style.display = "block";
 
       document
-        .querySelector(".local__popup_but")
+        .querySelector(".popup_but")
         .addEventListener("click", function () {
           // Oculta a popUp
           popUp.style.display = "none";
