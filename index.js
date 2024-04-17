@@ -166,27 +166,22 @@ function addCards(cards, container) {
 // Adiciona os cards ja existentes
 addCards(initialCards, cardsContainer);
 
-function likeCard(button) {
-  if (button.classList.contains("local__img-btn-heart")) {
-    button.classList.remove("local__img-btn-heart");
-    button.classList.add("local__img-btn-heart-active");
-  } else {
-    button.classList.add("local__img-btn-heart");
-    button.classList.remove("local__img-btn-heart-active");
-  }
-}
+function likeCard() {
+  const likeButtons = document.querySelectorAll(".local__img-btn-heart");
 
-function likeCardbutton(buttons) {
-  buttons.forEach(function (button) {
-    button.addEventListener("click", function () {
-      likeCard(button);
+  likeButtons.forEach(function (likeButton) {
+    likeButton.addEventListener("click", function () {
+      if (likeButton.classList.contains("local__img-btn-heart")) {
+        likeButton.classList.remove("local__img-btn-heart");
+        likeButton.classList.add("local__img-btn-heart-active");
+      } else {
+        likeButton.classList.add("local__img-btn-heart");
+        likeButton.classList.remove("local__img-btn-heart-active");
+      }
     });
   });
 }
-
-const likeButtons = document.querySelectorAll(".local__img-btn-heart");
-likeCardbutton(likeButtons);
-
+likeCard();
 // Evento do clique para adicionar novo card
 const addButton = document.getElementById("addCardButton");
 
@@ -199,10 +194,9 @@ function addCardform(event) {
   const newLink = newLinkInput.value
     ? newLinkInput.value
     : "https://plus.unsplash.com/premium_photo-1695186450459-8d3c896ca573?q=80&w=4140&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-
+  likeCard();
   // Envia um novo card com os dados fornecidos
   const newCard = { name: newName, link: newLink };
-  initialCards.push(newCard);
 
   addCard(newCard, cardsContainer);
 
@@ -210,9 +204,7 @@ function addCardform(event) {
   newNameInput.value = "";
   newLinkInput.value = "";
 
-  // Atualiza a lista de botões de like
-  const newlikeButtons = document.querySelectorAll(".local__img-btn-heart");
-  likeCardbutton(newlikeButtons);
+  likeCard();
 }
 
 addButton.addEventListener("click", addCardform);
