@@ -12,3 +12,7 @@ body {
   margin: 0 auto;
   position: relative;
 }
+
+.page-opacity {
+  opacity: 0.4;
+}

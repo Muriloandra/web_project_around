@@ -2,48 +2,39 @@ const openForname = document.querySelector(".explorer__btn-form");
 const closePagename = document.querySelector(
   ".form__edit-container-button-esc"
 );
-const closeBut = document.querySelector(".forming__edit-container-button-esc");
-const formClose = document.querySelector(".form");
+const closeButton = document.querySelector(".form__edit-container-button-esc");
+const formContainer = document.querySelector(".form-container");
 const openPage = document.querySelector(".page");
 const submiTform = document.querySelector(".form__edit-change-save");
 const openBut = document.querySelector(".explorer__btn-insert");
 const closeB = document.querySelector(".forming");
 const buttonForm = document.querySelector(".forming__edit-change-save");
 
-// Funcao para abertura e fechamento do formulario com opacidade da pagina.
+// retirar a opacidade da pagina ao iniciar
+const pageOpacity = document.querySelector(".page-opacity");
+pageOpacity.classList.remove("page-opacity");
 
 function openForm() {
-  formClose.style.display = "block";
-  openPage.style.opacity = "0.4";
   openBut.disabled = true;
-}
-
-function openImg() {
-  closeB.style.display = "block";
-  openPage.style.opacity = "0.4";
-}
-function closeImg() {
-  closeB.style.display = "none";
-  openPage.style.opacity = "1";
+  if (formContainer.classList.contains("form-container")) {
+    formContainer.classList.remove("form-clean");
+    formContainer.classList.add("form-container");
+  } else {
+    formContainer.classList.add("form-clean");
+    formContainer.classList.remove("form-container");
+  }
+  pageOpacity.classList.add("page-opacity");
 }
 
 function closeForm() {
-  formClose.style.display = "none";
   openBut.disabled = false;
-}
-
-function closePage() {
-  openPage.style.opacity = "1";
+  formContainer.classList.add("form-clean");
+  pageOpacity.classList.remove("page-opacity");
 }
 
 // Evento de abrir e fechar os formularios.
-openBut.addEventListener("click", openImg);
-closeBut.addEventListener("click", closeImg);
+closeButton.addEventListener("click", closeForm);
 openForname.addEventListener("click", openForm);
-closePagename.addEventListener("click", closeForm);
-closePagename.addEventListener("click", closePage);
-submiTform.addEventListener("click", closePage);
-buttonForm.addEventListener("click", closeImg);
 
 const formElment = document.querySelector(".form__edit-change");
 
@@ -54,7 +45,6 @@ function handleProfileFormSubmit(evt) {
 
   const nameInput = document.querySelector("#name");
   const jobInput = document.querySelector("#author");
-  const formClean = document.querySelector(".form-clean");
 
   const name = nameInput.value;
   const job = jobInput.value;
@@ -64,7 +54,10 @@ function handleProfileFormSubmit(evt) {
 
   nameDisplay.textContent = name;
   jobDisplay.textContent = job;
-  formClean.style.display = "none";
+  closeForm();
+
+  nameInput.value = "";
+  jobInput.value = "";
   openBut.disabled = false;
 }
 
