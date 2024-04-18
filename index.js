@@ -2,12 +2,14 @@ const openForname = document.querySelector(".explorer__btn-form");
 const closePagename = document.querySelector(
   ".form__edit-container-button-esc"
 );
-const closeButton = document.querySelector(".form__edit-container-button-esc");
+const closeButton = document.querySelector(
+  ".forming__edit-container-button-esc"
+);
 const formContainer = document.querySelector(".form-container");
 const openPage = document.querySelector(".page");
 const submiTform = document.querySelector(".form__edit-change-save");
-const openBut = document.querySelector(".explorer__btn-insert");
-const closeB = document.querySelector(".forming");
+const buttonLocal = document.querySelector(".explorer__btn-insert");
+const formingContainer = document.querySelector(".forming");
 const buttonForm = document.querySelector(".forming__edit-change-save");
 
 // retirar a opacidade da pagina ao iniciar
@@ -15,7 +17,7 @@ const pageOpacity = document.querySelector(".page-opacity");
 pageOpacity.classList.remove("page-opacity");
 
 function openForm() {
-  openBut.disabled = true;
+  buttonLocal.disabled = true;
   if (formContainer.classList.contains("form-container")) {
     formContainer.classList.remove("form-clean");
     formContainer.classList.add("form-container");
@@ -27,14 +29,32 @@ function openForm() {
 }
 
 function closeForm() {
-  openBut.disabled = false;
+  buttonLocal.disabled = false;
   formContainer.classList.add("form-clean");
   pageOpacity.classList.remove("page-opacity");
 }
 
+function openLocal() {
+  if (formingContainer.classList.contains("forming")) {
+    formingContainer.classList.remove("forming-clean");
+    formingContainer.classList.add("forming");
+  } else {
+    formingContainer.classList.add("forming-clean");
+    formingContainer.classList.remove("forming");
+  }
+  pageOpacity.classList.add("page-opacity");
+}
+
+function closeLocal() {
+  formingContainer.classList.add("forming-clean");
+  pageOpacity.classList.remove("page-opacity");
+}
+
 // Evento de abrir e fechar os formularios.
-closeButton.addEventListener("click", closeForm);
+closePagename.addEventListener("click", closeForm);
 openForname.addEventListener("click", openForm);
+buttonLocal.addEventListener("click", openLocal);
+closeButton.addEventListener("click", closeLocal);
 
 const formElment = document.querySelector(".form__edit-change");
 
@@ -58,7 +78,7 @@ function handleProfileFormSubmit(evt) {
 
   nameInput.value = "";
   jobInput.value = "";
-  openBut.disabled = false;
+  buttonLocal.disabled = false;
 }
 
 formElment.addEventListener("submit", handleProfileFormSubmit);
@@ -128,13 +148,19 @@ function addCard(card, container) {
       popupParagraph.textContent = textContent;
       popupImg.alt = event.target.alt;
 
-      popUp.style.display = "block";
+      popUp.classList.remove("popup-close");
+
+      pageOpacity.classList.add("page-opacity");
 
       document
         .querySelector(".popup-but")
         .addEventListener("click", function () {
           // Oculta a popUp
-          popUp.style.display = "none";
+
+          popUp.classList.add("popup-close");
+          popUp.classList.add("popup");
+
+          pageOpacity.classList.remove("page-opacity");
         });
     });
 
@@ -207,8 +233,9 @@ addButton.addEventListener("click", addCardform);
 function tapEnter(event) {
   if (newNameInput.value !== "" && event.key === "Enter") {
     addCardform(event);
-    closeImg();
+    closeLocal();
   }
 }
+addButton.addEventListener("click", closeLocal);
 
 document.addEventListener("keyup", tapEnter);
