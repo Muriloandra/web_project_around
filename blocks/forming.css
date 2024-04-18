@@ -2,7 +2,7 @@
   width: 430px;
   height: 330px;
   border-radius: 20px;
-  position: absolute;
+  position: fixed;
   top: 50%;
   right: 50%;
   margin-right: -215px;
@@ -94,7 +94,7 @@
   text-align: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .forming {
     width: 288px;
     height: 322px;
@@ -121,13 +121,18 @@
     height: 100%;
   }
 
-  .form__edit-title {
+  .forming__edit-title {
     max-width: 238px;
   }
   .forming__edit-change-save {
     width: 238px;
   }
-  .form__edit-change-text-link {
+
+  .forming__edit-change-text {
+    max-width: 238px;
+    width: 100%;
+  }
+  .forming__edit-change-text-link {
     max-width: 238px;
     width: 100%;
   }

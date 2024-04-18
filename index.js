@@ -1,12 +1,14 @@
-let openP = document.querySelector(".explorer__btn-form");
-let closeP = document.querySelector(".form__edit-container-button-esc");
-let closeBut = document.querySelector(".forming__edit-container-button-esc");
-let formClose = document.querySelector(".form");
-let openPage = document.querySelector(".page");
-let submiTform = document.querySelector(".form__edit-change-save");
-let openBut = document.querySelector(".explorer__btn-insert");
-let closeB = document.querySelector(".forming");
-let buttonForm = document.querySelector(".forming__edit-change-save");
+const openForname = document.querySelector(".explorer__btn-form");
+const closePagename = document.querySelector(
+  ".form__edit-container-button-esc"
+);
+const closeBut = document.querySelector(".forming__edit-container-button-esc");
+const formClose = document.querySelector(".form");
+const openPage = document.querySelector(".page");
+const submiTform = document.querySelector(".form__edit-change-save");
+const openBut = document.querySelector(".explorer__btn-insert");
+const closeB = document.querySelector(".forming");
+const buttonForm = document.querySelector(".forming__edit-change-save");
 
 // Funcao para abertura e fechamento do formulario com opacidade da pagina.
 
@@ -37,28 +39,28 @@ function closePage() {
 // Evento de abrir e fechar os formularios.
 openBut.addEventListener("click", openImg);
 closeBut.addEventListener("click", closeImg);
-openP.addEventListener("click", openForm);
-closeP.addEventListener("click", closeForm);
-closeP.addEventListener("click", closePage);
+openForname.addEventListener("click", openForm);
+closePagename.addEventListener("click", closeForm);
+closePagename.addEventListener("click", closePage);
 submiTform.addEventListener("click", closePage);
 buttonForm.addEventListener("click", closeImg);
 
-let formElment = document.querySelector(".form__edit-change");
+const formElment = document.querySelector(".form__edit-change");
 
 // adicionar nome e profissao no formulario
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
 
-  let nameInput = document.querySelector("#name");
-  let jobInput = document.querySelector("#author");
-  let formClean = document.querySelector(".form-clean");
+  const nameInput = document.querySelector("#name");
+  const jobInput = document.querySelector("#author");
+  const formClean = document.querySelector(".form-clean");
 
-  let name = nameInput.value;
-  let job = jobInput.value;
+  const name = nameInput.value;
+  const job = jobInput.value;
 
-  let nameDisplay = document.querySelector("#change");
-  let jobDisplay = document.querySelector("#switch");
+  const nameDisplay = document.querySelector("#change");
+  const jobDisplay = document.querySelector("#switch");
 
   nameDisplay.textContent = name;
   jobDisplay.textContent = job;
@@ -131,6 +133,7 @@ function addCard(card, container) {
 
       popupImg.src = imageSrc;
       popupParagraph.textContent = textContent;
+      popupImg.alt = event.target.alt;
 
       popUp.style.display = "block";
 

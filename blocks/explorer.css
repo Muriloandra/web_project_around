@@ -3,7 +3,6 @@
   display: flex;
   justify-content: space-between;
   height: auto;
-  padding: auto;
   margin: auto;
   margin-top: 40px;
 }
@@ -35,6 +34,7 @@
   text-align: left;
   color: #ffffff;
   max-width: 373px;
+  overflow: hidden;
 }
 .explorer__paragraph {
   font-family: "Inter";
@@ -47,13 +47,14 @@
   max-width: 415px;
   width: 100%;
   padding-bottom: 20px;
+  overflow: hidden;
 }
 .explorer__btn-form {
   background-image: url(../images/Edit\ Button.svg);
   width: 24px;
   height: 24px;
   margin-left: 18px;
-  /* margin-top: 8px; */
+
   background-color: transparent;
   background-size: cover;
   background-repeat: no-repeat;
@@ -114,12 +115,12 @@
     gap: 10px;
   }
   .explorer__title {
-    font-family: "Inter";
     font-size: 30px;
     font-weight: 500;
     line-height: 40px;
     letter-spacing: 0em;
     text-align: center;
+    margin: 0;
   }
   .explorer__btn-form {
     width: 24px;
@@ -132,7 +133,6 @@
     line-height: 17px;
     letter-spacing: 0em;
     text-align: center;
-    padding: 0px;
   }
   .explorer__btn-insert {
     border: 2px solid #ffffff;

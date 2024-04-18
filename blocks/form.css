@@ -2,7 +2,7 @@
   width: 430px;
   height: 330px;
   border-radius: 20px;
-  position: absolute;
+  position: fixed;
   top: 50%;
   right: 50%;
   margin-right: -215px;
@@ -115,7 +115,7 @@
   opacity: 0.6;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600) {
   .form {
     width: 288px;
     height: 322px;
