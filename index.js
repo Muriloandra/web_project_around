@@ -155,7 +155,7 @@ function addCard(card, container) {
 
   deleteButton.addEventListener("click", removeCard);
 
-  container.appendChild(cardClone);
+  container.prepend(cardClone);
 }
 
 // Funcao que recebe a lista de cards
