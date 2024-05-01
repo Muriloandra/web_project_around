@@ -11,6 +11,10 @@ const submiTform = document.querySelector(".form__edit-change-save");
 const buttonLocal = document.querySelector(".explorer__btn-insert");
 const formingContainer = document.querySelector(".forming");
 const buttonForm = document.querySelector(".forming__edit-change-save");
+const popUp = document.querySelector(".popup");
+const formsElement = document.querySelector(
+  ".forming__edit-text, .form__edit-container, .popup-open"
+);
 
 // retirar a opacidade da pagina ao iniciar
 const pageOpacity = document.querySelector(".page-opacity");
@@ -50,11 +54,33 @@ function closeLocal() {
   pageOpacity.classList.remove("page-opacity");
 }
 
+// Oculta a popUp
+function closePopup() {
+  popUp.classList.add("popup-close");
+  popUp.classList.add("popup");
+  pageOpacity.classList.remove("page-opacity");
+}
+
+// oculta as janelas com clique externo
+function closeClick(event) {
+  const escapeForm = event.target.closest(
+    ".forming__edit-container, .form__edit-container, .popup-open"
+  );
+
+  if (escapeForm) {
+    return;
+  } else {
+    closeLocal();
+    closeForm();
+    closePopup();
+  }
+}
 // Evento de abrir e fechar os formularios.
 closePagename.addEventListener("click", closeForm);
 openForname.addEventListener("click", openForm);
 buttonLocal.addEventListener("click", openLocal);
 closeButton.addEventListener("click", closeLocal);
+document.addEventListener("mousedown", closeClick);
 
 const formElment = document.querySelector(".form__edit-change");
 
@@ -115,6 +141,7 @@ const formingClean = document.getElementById("forming");
 const newNameInput = document.getElementById("cardName");
 const newLinkInput = document.getElementById("cardLink");
 const cardsContainer = document.getElementById("card");
+document.querySelector(".popup-but").addEventListener("click", closePopup);
 
 // Criar o card que contem a imagem e o nome
 function addCard(card, container) {
@@ -132,7 +159,6 @@ function addCard(card, container) {
     .querySelector(".local__img-photo")
     .addEventListener("click", function (event) {
       // Seleciona o popUp
-      const popUp = document.querySelector(".popup");
 
       // Seleciona a imagem expandida e o parágrafo dentro da popUp
       const popupImg = document.querySelector(".popup-img");
@@ -151,17 +177,6 @@ function addCard(card, container) {
       popUp.classList.remove("popup-close");
 
       pageOpacity.classList.add("page-opacity");
-
-      document
-        .querySelector(".popup-but")
-        .addEventListener("click", function () {
-          // Oculta a popUp
-
-          popUp.classList.add("popup-close");
-          popUp.classList.add("popup");
-
-          pageOpacity.classList.remove("page-opacity");
-        });
     });
 
   // Deletar o card
@@ -236,6 +251,15 @@ function tapEnter(event) {
     closeLocal();
   }
 }
+// funcao para fechar os formularios com a tecla Esc
+function tapClose(event) {
+  if (event.key === "Escape") {
+    closeLocal();
+    closeForm();
+    closePopup();
+  }
+}
 addButton.addEventListener("click", closeLocal);
 
 document.addEventListener("keyup", tapEnter);
+document.addEventListener("keyup", tapClose);

@@ -76,7 +76,7 @@
             type="button"
           ></button>
           <h2 class="form__edit-title">Editar perfil</h2>
-          <form class="form__edit-change" action="#">
+          <form name="form" class="form__edit-change" action="#" novalidate>
             <input
               placeholder="Nome"
               class="form__edit-change-text"
@@ -84,6 +84,8 @@
               id="name"
               name="nome"
               required
+              minlength="2"
+              maxlength="40"
             />
             <input
               placeholder="Sobre mim"
@@ -92,6 +94,8 @@
               id="author"
               name="autor"
               required
+              minlength="2"
+              maxlength="200"
             />
             <button class="form__edit-change-save" type="submit">Salvar</button>
           </form>
@@ -106,13 +110,19 @@
           type="button"
         ></button>
         <h2 class="forming__edit-title">Novo Local</h2>
-        <form id="forming" class="forming__edit-change" action="#">
+        <form
+          name="form2"
+          id="forming"
+          class="forming__edit-change"
+          action="#"
+          novalidate
+        >
           <input
             placeholder="Titulo"
             class="forming__edit-change-text"
             type="text"
             id="cardName"
-            name="nome"
+            name=""
             required
           />
           <input
@@ -120,7 +130,7 @@
             class="forming__edit-change-text-link"
             type="text"
             id="cardLink"
-            name="autor"
+            name=""
             required
           />
           <button
