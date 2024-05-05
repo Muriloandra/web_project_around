@@ -16,9 +16,14 @@ const formsElement = document.querySelector(
   ".forming__edit-text, .form__edit-container, .popup-open"
 );
 
-// retirar a opacidade da pagina ao iniciar
 const pageOpacity = document.querySelector(".page-opacity");
+
+// retirar a opacidade da pagina ao iniciar
+
 pageOpacity.classList.remove("page-opacity");
+
+// remover a classe de botao desabilitado ao carregar a pagina
+// buttonFormDisabled.classList.remove("form__edit-change-save-disabled");
 
 function openForm() {
   buttonLocal.disabled = true;
@@ -82,7 +87,7 @@ buttonLocal.addEventListener("click", openLocal);
 closeButton.addEventListener("click", closeLocal);
 document.addEventListener("mousedown", closeClick);
 
-const formElment = document.querySelector(".form__edit-change");
+const formNameJob = document.querySelector(".form__edit-change");
 
 // adicionar nome e profissao no formulario
 
@@ -107,7 +112,7 @@ function handleProfileFormSubmit(evt) {
   buttonLocal.disabled = false;
 }
 
-formElment.addEventListener("submit", handleProfileFormSubmit);
+formNameJob.addEventListener("submit", handleProfileFormSubmit);
 
 const initialCards = [
   {
