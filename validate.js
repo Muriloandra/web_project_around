@@ -1,65 +1,69 @@
-const showError = (formElement, inputElement, errorMessage) => {
-  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-  inputElement.classList.add("form__edit-change-text-error-job");
-  errorElement.classList.add(`${inputElement.id}-error-active`);
-  errorElement.textContent = errorMessage;
-};
+function showError(inputELement) {
+  inputELement.classList.add("form__edit-change-text-error-job");
+}
 
-const hideError = (formElement, inputElement) => {
-  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-  inputElement.classList.remove("form__edit-change-text-error-job");
-  errorElement.classList.remove(`${inputElement.id}-error-active`);
-  errorElement.textContent = "";
-};
+function hideError(inputELement) {
+  inputELement.classList.remove("form__edit-change-text-error-job");
+}
 
-const checkInputValidity = (formElement, inputElement) => {
-  if (!inputElement.validity.valid) {
-    showError(formElement, inputElement, inputElement.validationMessage);
+function errorMessage(elementTag, input) {
+  elementTag.textContent = input.validationMessage;
+}
+
+function cleanMessage(elementTag) {
+  elementTag.textContent = "";
+}
+
+function inputValidation(input) {
+  const tagElement = input.nextElementSibling;
+  if (!input.validity.valid) {
+    showError(input);
+    errorMessage(tagElement, input);
   } else {
-    hideError(formElement, inputElement);
+    hideError(input);
+    cleanMessage(tagElement);
   }
-};
+}
 
-const hasInvalidInput = (inputList) => {
-  return inputList.some((inputElement) => {
-    return !inputElement.validity.valid;
-  });
-};
-
-const toggleButtonState = (inputList, buttonElement) => {
-  if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add("form__edit-change-save-disabled");
+function buttonDisabled(inputs, button) {
+  const isValid = inputs.every((input) => input.validity.valid);
+  if (isValid) {
+    button.classList.remove("form__edit-change-save-disabled");
+    button.removeAttribute("disabled");
   } else {
-    buttonElement.classList.remove("form__edit-change-save-disabled");
+    button.classList.add("form__edit-change-save-disabled");
+    button.setAttribute("disabled", true);
   }
-};
+}
 
-const setEventListeners = (formElement) => {
-  const inputList = Array.from(
-    formElement.querySelectorAll(".form__edit-change-text")
-  );
-  const buttonElement = formElement.querySelector(".form__edit-change-save");
-  toggleButtonState(inputList, buttonElement);
-  inputList.forEach((inputElement) => {
-    inputElement.addEventListener("input", function () {
-      checkInputValidity(formElement, inputElement);
-      toggleButtonState(inputList, buttonElement);
+function enableValidation(elementos) {
+  const form = document.forms[elementos.formSelector];
+  const inputs = Array.from(form.querySelectorAll(elementos.inputsSelector));
+  const button = form.querySelector(elementos.buttonForm);
+  buttonDisabled(inputs, button);
+
+  for (const input of inputs) {
+    input.addEventListener("input", (event) => {
+      event.preventDefault();
+      const element = event.target;
+      inputValidation(element);
+      buttonDisabled(inputs, button);
     });
-  });
-};
+  }
+}
 
-setEventListeners(formNameJob);
+enableValidation({
+  formSelector: "form",
+  inputsSelector: "input",
+  buttonForm: ".form__edit-change-save",
+  // inputError: ".form__edit-change-text-error-job",
+  buttonError: ".form__edit-change-save-disabled",
+});
 
-const enableValidation = () => {
-  const formList = Array.from(document.querySelectorAll("#forming"));
-
-  formList.forEach((formElement) => {
-    formElement.addEventListener("submit", (evt) => {
-      evt.preventDefault();
-    });
-
-    setEventListeners(formElement);
-  });
-};
-
-enableValidation();
+enableValidation({
+  formSelector: "form2",
+  inputsSelector: "input",
+  buttonForm: ".form__edit-change-save",
+  // inputError: ".forming__edit-change-text-error-job",
+  buttonError: ".form__edit-change-save-disabled",
+});

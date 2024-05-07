@@ -68,6 +68,19 @@
   margin-top: 20px;
 }
 
+.forming__edit-change-text-error-job {
+  border-bottom: 1px solid #ff0000;
+}
+
+.forming-error {
+  opacity: 1;
+  color: red;
+  max-width: 358px;
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  height: auto;
+}
 .forming__edit-change-text-link {
   max-width: 358px;
   width: 100%;
