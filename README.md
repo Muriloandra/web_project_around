@@ -28,6 +28,14 @@ Personalização do Perfil: Os usuários podem alterar o nome, cargo do perfil e
 
 Likes nas Fotos: Os coracoes nas fotos sao clicaveis, podendo deixar o seu like caso goste da foto.
 
+Claro, aqui está o texto corrigido:
+
+"Validação dos formulários utilizando JavaScript.
+
+Utilização da tecla Esc para fechar formulários e pop-ups.
+
+Fechando formulários utilizando o clique externo.
+
 Tecnologias Utilizadas
 
 HTML: Utilizado para estruturar o conteúdo da página, permitindo uma organização dos elementos.
