@@ -1,69 +1,86 @@
-function showError(inputELement) {
-  inputELement.classList.add("form__edit-change-text-error-job");
+// Função para mostrar a mensagem de erro e adicionar a classe de erro
+function showError(inputELement, errorClass) {
+  inputELement.classList.add(errorClass);
 }
 
-function hideError(inputELement) {
-  inputELement.classList.remove("form__edit-change-text-error-job");
+// Função para ocultar a mensagem de erro e remover a classe de erro
+function hideError(inputELement, errorClass) {
+  inputELement.classList.remove(errorClass);
 }
 
+// Função para exibir a mensagem de erro no elemento de tag
 function errorMessage(elementTag, input) {
   elementTag.textContent = input.validationMessage;
 }
 
+// Função para limpar a mensagem de erro do elemento de tag
 function cleanMessage(elementTag) {
   elementTag.textContent = "";
 }
 
-function inputValidation(input) {
+// Função para validar o input e exibir ou ocultar a mensagem de erro
+function inputValidation(input, errorClass) {
   const tagElement = input.nextElementSibling;
   if (!input.validity.valid) {
-    showError(input);
+    showError(input, errorClass);
     errorMessage(tagElement, input);
   } else {
-    hideError(input);
+    hideError(input, errorClass);
     cleanMessage(tagElement);
   }
 }
 
-function buttonDisabled(inputs, button) {
-  const isValid = inputs.every((input) => input.validity.valid);
-  if (isValid) {
-    button.classList.remove("form__edit-change-save-disabled");
+// Função para habilitar ou desabilitar o botão
+function buttonDisabled(inputs, button, errorButton) {
+  const allInputsValid = inputs.every((input) => input.validity.valid);
+
+  if (allInputsValid && inputs.length === 2) {
+    button.classList.remove(errorButton);
     button.removeAttribute("disabled");
   } else {
-    button.classList.add("form__edit-change-save-disabled");
+    button.classList.add(errorButton);
     button.setAttribute("disabled", true);
   }
 }
 
+// Função principal para habilitar a validação do formulário
 function enableValidation(elementos) {
   const form = document.forms[elementos.formSelector];
   const inputs = Array.from(form.querySelectorAll(elementos.inputsSelector));
   const button = form.querySelector(elementos.buttonForm);
-  buttonDisabled(inputs, button);
+  const buttonError = elementos.buttonError;
+  buttonDisabled(inputs, button, buttonError);
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    buttonDisabled(inputs, button, buttonError);
+  });
 
   for (const input of inputs) {
     input.addEventListener("input", (event) => {
       event.preventDefault();
       const element = event.target;
-      inputValidation(element);
-      buttonDisabled(inputs, button);
+      inputValidation(element, elementos.inputError);
+      buttonDisabled(inputs, button, buttonError);
     });
   }
 }
 
+// Ativa a validação para o primeiro formulário
 enableValidation({
   formSelector: "form",
   inputsSelector: "input",
   buttonForm: ".form__edit-change-save",
-  // inputError: ".form__edit-change-text-error-job",
-  buttonError: ".form__edit-change-save-disabled",
+  inputError: "form__edit-change-text-error-job",
+  buttonError: "form__edit-change-save-disabled",
 });
 
+// Ativa a validação para o segundo formulário
 enableValidation({
   formSelector: "form2",
   inputsSelector: "input",
-  buttonForm: ".form__edit-change-save",
-  // inputError: ".forming__edit-change-text-error-job",
-  buttonError: ".form__edit-change-save-disabled",
+  buttonForm: ".forming__edit-change-save",
+  inputError: "forming__edit-change-text-error-job",
+  buttonError: "forming__edit-change-save-disabled",
 });
