@@ -19,12 +19,9 @@ const formsElement = document.querySelector(
 const pageOpacity = document.querySelector(".page-opacity");
 
 // retirar a opacidade da pagina ao iniciar
-
 pageOpacity.classList.remove("page-opacity");
 
 // remover a classe de botao desabilitado ao carregar a pagina
-// buttonFormDisabled.classList.remove("form__edit-change-save-disabled");
-
 function openForm() {
   buttonLocal.disabled = true;
   if (formContainer.classList.contains("form-container")) {
@@ -80,14 +77,6 @@ function closeClick(event) {
     closePopup();
   }
 }
-// Evento de abrir e fechar os formularios.
-closePagename.addEventListener("click", closeForm);
-openForname.addEventListener("click", openForm);
-buttonLocal.addEventListener("click", openLocal);
-closeButton.addEventListener("click", closeLocal);
-document.addEventListener("mousedown", closeClick);
-
-const formNameJob = document.querySelector(".form__edit-change");
 
 // adicionar nome e profissao no formulario
 
@@ -111,6 +100,15 @@ function handleProfileFormSubmit(evt) {
   jobInput.value = "";
   buttonLocal.disabled = false;
 }
+
+// Evento de abrir e fechar os formularios.
+closePagename.addEventListener("click", closeForm);
+openForname.addEventListener("click", openForm);
+buttonLocal.addEventListener("click", openLocal);
+closeButton.addEventListener("click", closeLocal);
+document.addEventListener("mousedown", closeClick);
+
+const formNameJob = document.querySelector(".form__edit-change");
 
 formNameJob.addEventListener("submit", handleProfileFormSubmit);
 
@@ -146,6 +144,7 @@ const formingClean = document.getElementById("forming");
 const newNameInput = document.getElementById("cardName");
 const newLinkInput = document.getElementById("cardLink");
 const cardsContainer = document.getElementById("card");
+const addButton = document.getElementById("addCardButton");
 document.querySelector(".popup-but").addEventListener("click", closePopup);
 
 // Criar o card que contem a imagem e o nome
@@ -197,35 +196,6 @@ function addCard(card, container) {
   container.prepend(cardClone);
 }
 
-// Funcao que recebe a lista de cards
-function addCards(cards, container) {
-  cards.forEach((card) => {
-    addCard(card, container);
-  });
-}
-
-// Adiciona os cards ja existentes
-addCards(initialCards, cardsContainer);
-
-function likeCard() {
-  const likeButtons = document.querySelectorAll(".local__img-btn-heart");
-
-  likeButtons.forEach(function (likeButton) {
-    likeButton.addEventListener("click", function () {
-      if (likeButton.classList.contains("local__img-btn-heart")) {
-        likeButton.classList.remove("local__img-btn-heart");
-        likeButton.classList.add("local__img-btn-heart-active");
-      } else {
-        likeButton.classList.add("local__img-btn-heart");
-        likeButton.classList.remove("local__img-btn-heart-active");
-      }
-    });
-  });
-}
-likeCard();
-// Evento do clique para adicionar novo card
-const addButton = document.getElementById("addCardButton");
-
 // Função para adicionar um novo card
 function addCardform(event) {
   event.preventDefault();
@@ -248,8 +218,13 @@ function addCardform(event) {
   likeCard();
 }
 
-addButton.addEventListener("click", addCardform);
-//  funcao da tecla enter
+// Funcao que recebe a lista de cards
+function addCards(cards, container) {
+  cards.forEach((card) => {
+    addCard(card, container);
+  });
+}
+
 function tapEnter(event) {
   if (newNameInput.value !== "" && event.key === "Enter") {
     addCardform(event);
@@ -264,7 +239,28 @@ function tapClose(event) {
     closePopup();
   }
 }
-addButton.addEventListener("click", closeLocal);
+// Adiciona os cards ja existentes
+addCards(initialCards, cardsContainer);
 
+function likeCard() {
+  const likeButtons = document.querySelectorAll(".local__img-btn-heart");
+
+  likeButtons.forEach(function (likeButton) {
+    likeButton.addEventListener("click", function () {
+      if (likeButton.classList.contains("local__img-btn-heart")) {
+        likeButton.classList.remove("local__img-btn-heart");
+        likeButton.classList.add("local__img-btn-heart-active");
+      } else {
+        likeButton.classList.add("local__img-btn-heart");
+        likeButton.classList.remove("local__img-btn-heart-active");
+      }
+    });
+  });
+}
+likeCard();
+
+// Evento do clique para adicionar novo card
+addButton.addEventListener("click", addCardform);
+addButton.addEventListener("click", closeLocal);
 document.addEventListener("keyup", tapEnter);
 document.addEventListener("keyup", tapClose);
