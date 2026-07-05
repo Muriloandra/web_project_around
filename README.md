@@ -14,7 +14,7 @@ Previa da pagina e das funcionalidades
 
 Projeto "AroundUs : Ao redor dos Estados Unidos"
 
-Este é um projeto desenvolvido com o uso das tecnologias HTML, CSS e JavaScript. O objetivo principal é apresentar algumas imagens de locais nosEstados Unidos.
+Este é um projeto desenvolvido com o uso das tecnologias HTML, CSS e JavaScript. O objetivo principal é apresentar algumas imagens de locais nos Estados Unidos.
 
 Funcionalidades
 
@@ -28,7 +28,6 @@ Personalização do Perfil: Os usuários podem alterar o nome, cargo do perfil e
 
 Likes nas Fotos: Os coracoes nas fotos sao clicaveis, podendo deixar o seu like caso goste da foto.
 
-Claro, aqui está o texto corrigido:
 
 "Validação dos formulários utilizando JavaScript.
 
